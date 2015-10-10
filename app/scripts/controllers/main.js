@@ -8,10 +8,6 @@
  * Controller of the photoPortfolioApp
  */
 angular.module('photoPortfolioApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope) {
+	$scope.photos= ["1", "2", "3"];
   });
