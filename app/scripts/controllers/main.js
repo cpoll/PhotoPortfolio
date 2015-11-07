@@ -8,11 +8,20 @@
  * Controller of the photoPortfolioApp
  */
 angular.module('photoPortfolioApp')
+  
   .controller('MainCtrl', function ($scope, $http) {
 
 	$http.get('data/photos.json')
 		.then(function(res){
 				$scope.photodata = res.data;
-				console.log($scope.photodata);
-			});
+			});	
+  })
+  
+  .directive('applyPhotowallDirective', function(){
+	 return function applyPhotowall(scope, element, attrs){
+		if (scope.$last){
+		    var wall = new freewall("#container");
+			wall.fitWidth();
+		}
+	 };  
   });

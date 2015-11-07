@@ -1,5 +1,44 @@
-<div class="container">
-	<p ng-repeat="photo in photodata.photos">
+<!--<div id="freewall-container">
+	<div class="item" ng-repeat="photo in photodata.photos">
 		<img src='{{photo.smallSrc}}'>
-	</p>
-</div>
+	</div>
+</div>-->
+
+<style type="text/css">
+	#container {
+		width:80%;
+		margin:auto;
+		border:solid 1px;
+	}
+	.item {
+		background: rgb(135, 200, 200);
+		width:320px;
+		height:320px;
+	}
+	item img {
+		width: auto;
+		height: auto;
+	}
+	
+</style>
+
+  <style type="text/css">
+    #container {
+      width: 80%;
+      margin: auto;
+    }
+    .item {
+      background: rgb(135, 199, 135);
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+
+  <div id="container">
+  	<!--<div class="item" ng-repeat="photo in photodata.photos">
+		<img src='{{photo.smallSrc}}'>
+	</div>-->
+	<img class="item" ng-repeat="photo in photodata.photos track by photo.smallSrc" src='{{photo.smallSrc}}' apply-photowall-directive>
+  </div>
+
+								
